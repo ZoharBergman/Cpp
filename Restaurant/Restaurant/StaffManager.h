@@ -6,18 +6,17 @@
 class StaffManager
 {
 private:
-	Employee **employees;
+	Employee* employees;
 
-public:
-	
-	// Getters
-	const char* getName() const { return name; }
-	
+public:	
+	StaffManager(const Employee* employees);
+	StaffManager(const StaffManager& other) = delete;
+	~StaffManager() { delete []employees; }
+
 	// Methods
-	const Employee* employ() ;
-	const long fire(Employee &emp);
-	void distributeOrdersToEmployees() const;
-	void  ShoutOnEmployees() const;
+	void employ(const Employee& employee) ;
+	void fire(const Employee& employee);
+	void ShoutOnEmployees() const;
 	void print() const;
 };
 

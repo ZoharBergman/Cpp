@@ -13,29 +13,34 @@ public:
 		DESSERT
 	};
 
-	const static int MAX_DESCRIPTION_LENGTH = 150;
-	const static int MAX_NAME_LENGTH = 40;
-
 private:
 	int price;
-	char description[MAX_DESCRIPTION_LENGTH];
-	char name[MAX_NAME_LENGTH];
+	char* description;
+	char* name;
 	sIngredientAndQuantity* ingredientsAndQuantities;
 	eDishType type;
 
 public:
 	Dish(int price, const char* description, const char* name, const sIngredientAndQuantity* ingredientsAndQuantities, eDishType type);
-	~Dish() {delete []ingredientsAndQuantities;}
+	Dish(const Dish& other){ *this = other; }
+	~Dish() {delete []description; delete []name; delete []ingredientsAndQuantities;}
 
 	// Getters
-	const int getPrice() const {return price;}
+	int getPrice() const {return price;}
 	const char* getDescription() const {return description;}
 	const char* getName() const {return name;}
 	const sIngredientAndQuantity* getIngredientsAndQuantities() const {return ingredientsAndQuantities;}
 
+	// Setters
+	void setPrice(int price) {this->price = price; }
+	void setDescription (const char* description) {this->description = strdup(description);}
+
+	// Operators
+	const Dish& operator=(const Dish& other);
+
 	// Methods
-	const double calcCalories() const;
-	const void print() const;
+	double calcCalories() const;
+	void print() const;
 };
 
 #endif // __DISH_H

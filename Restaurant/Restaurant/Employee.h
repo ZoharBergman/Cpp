@@ -1,32 +1,40 @@
 #ifndef __EMPLOYEE_H
 #define __EMPLOYEE_H
 
+#include <iostream>
+
 class Employee
 {
 public:
-	const static int MAX_NAME_LENGTH = 40;
 	static long idCounter;
 
 protected:
-	char name[MAX_NAME_LENGTH];
+	char* name;
 	int seniority;
-	int bankAccountID;
+	long bankAccountID;
 	int salary;
 	long employeeID;
 
 public:
-	Employee(const char* name, int seniority, int bankAccountID, int salary) { employeeID = idCounter++; };
-	~Employee();
+	Employee(const char* name, int seniority, long bankAccountID, int salary);
+	~Employee(){delete []name;}
+	Employee(const Employee& other) = delete;
 
 	// Getters
 	const char* getName() const { return name; }
-	const int getSeniority() const { return seniority; }
-	const int getBankAccountID() const { return bankAccountID; }
-	const int getSalary() const { return salary; }
-	const long getEmployeeID() const { return employeeID; }
+	int getSeniority() const { return seniority; }
+	long getBankAccountID() const { return bankAccountID; }
+	int getSalary() const { return salary; }
+	long getEmployeeID() const { return employeeID; }
+
+	// Setters
+	void setName(const char* name) { this->name = strdup(name); }
+	void setSeniority(int seniority) { this->seniority = seniority; }
+	void setBankAccountID(int bankAccountID) { this->bankAccountID = bankAccountID; }
+	void setSalary(int salary) { this->salary = salary; }
 
 	// Methods
-	const long quit() const;
+	void quit() const;
 	void print() const;
 };
 long Employee::idCounter = 0;

@@ -8,13 +8,15 @@ class Menu
 private:
 	const Dish* dishes;
 public:
-	Menu(const Dish*& dishes);
+	Menu(const Dish* dishes);
 	~Menu(){delete []dishes;}
+	Menu(const Menu& other) = delete;
 
 	// Methods
 	void addDish(const Dish& dish);
 	void removeDish(const char* dishName);
 	void print() const;
+	const Dish* getDishByName(const char* name);
 };
 
 #endif // __MENU_H

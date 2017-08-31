@@ -62,15 +62,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Buthcery.h" />
+    <ClInclude Include="Chef.h" />
     <ClInclude Include="Dish.h" />
+    <ClInclude Include="Employee.h" />
     <ClInclude Include="Ingredient.h" />
     <ClInclude Include="IngredientAndQuantity.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Order.h" />
+    <ClInclude Include="StaffManager.h" />
+    <ClInclude Include="Stock.h" />
     <ClInclude Include="Table.h" />
+    <ClInclude Include="Waiter.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Restaurant.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

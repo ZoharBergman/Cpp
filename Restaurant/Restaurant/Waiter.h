@@ -2,19 +2,21 @@
 #define __WAITER_H
 
 #include "Order.h"
+#include "Employee.h"
 
-class Waiter : public Empolyee
+class Waiter : public Employee
 {
 public:
-	Order **orders;
+	Order* orders;
 
 public:
 	// Getters
-	const order* getOrder() const { return order; }
+	const Order* getAllOrders() const { return orders; }
+	const Order getOrderByOrderId(long orderId) const;
 
 	// Methods
 	void takeOrder(const Order &order);
-	const int serveBill(const Order &order);
+	int serveBill(const Order &order);
 	void cleanTable(const Table &table) const;
 	void print() const;
 };

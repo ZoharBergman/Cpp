@@ -23,12 +23,25 @@ private:
 
 public:
 	Order(const Dish** dishes, const Table& table, eOrderStatus status);
-	~Order();
+	Order(const Order& other){ *this = other; }
+	~Order() {delete []dishes; }
+
+	// Getters
+	const Dish** getDishes() const { return dishes; }
+	const Table* getTable() const { return table; }
+	eOrderStatus getStatus() const { return status; }
+	
+	// Setters
+	void setTable(const Table* table) {this->table = table; }
+	void setStatus(eOrderStatus status) { this->status = status; }
+
+	// Operators
+	const Order& operator=(const Order& other);
 
 	// Methods
 	int calcPrice() const;
 	void cancelDish(const char* dishName);
-	void addDish(const Dish*& dish);
+	void addDish(const Dish* dish);
 	void print() const;
 
 };

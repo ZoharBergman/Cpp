@@ -8,14 +8,18 @@ public:
 
 private:
 	long id;
-	const int maxNumOfGuests;
+	int maxNumOfGuests;
 	bool isTaken;	
 
 public:
-	Table(int maxNumOfGuests = 0, bool isTaken = false){id = idCounter++;}
+	Table(int maxNumOfGuests = 0, bool isTaken = false);
+	Table(const Table& other){ *this = other; }
 
 	// Setters
 	void setIsTaken(bool isTaken) {this->isTaken = isTaken;}
+
+	// Operators
+	const Table& operator=(const Table& other);
 };
 long Table::idCounter = 0;
 

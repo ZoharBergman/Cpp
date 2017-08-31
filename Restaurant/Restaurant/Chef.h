@@ -1,12 +1,16 @@
 #ifndef __CHEF_H
 #define __CHEF_H
 
-class Chef : public Buthcery, staffManager
+#include "Buthcery.h"
+#include "StaffManager.h"
+#include "Dish.h"
+
+class Chef : public Buthcery, StaffManager
 {
 
 public:
 	// Methods
-	bool approveDish(const Dish &dish);
+	bool approveDish(const Dish& dish);
 	const Dish* inventNewDish() const;
 };
 
