@@ -17,6 +17,9 @@ public:
 	const sIngredientAndQuantity* getAllIngredientsAndtQuantities() const { return ingredientsAndQuantities; }
 	const sIngredientAndQuantity getIngredientAndQuantityByIngredientName(const char* ingredientName) const;
 
+	// Operators
+	const Stock& operator++();
+
 	//Methods
 	void addIngredient(const Ingredient& ingredient);
 	void removeIngredient(const Ingredient& ingredient);

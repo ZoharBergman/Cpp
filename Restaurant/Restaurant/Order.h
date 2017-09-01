@@ -37,6 +37,7 @@ public:
 
 	// Operators
 	const Order& operator=(const Order& other);
+	const Order& operator+=(const Dish* dish){this->addDish(dish);}
 
 	// Methods
 	int calcPrice() const;

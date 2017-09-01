@@ -37,6 +37,9 @@ public:
 
 	// Operators
 	const Dish& operator=(const Dish& other);
+	friend int operator+(const Dish& dish, int price);
+	friend int operator+(int price, const Dish& dish);
+	bool operator<(const Dish& other){ return this->calcCalories() < other.calcCalories();}
 
 	// Methods
 	double calcCalories() const;

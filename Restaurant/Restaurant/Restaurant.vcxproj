@@ -70,6 +70,7 @@
     <ClInclude Include="IngredientAndQuantity.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Order.h" />
+    <ClInclude Include="Restaurant.h" />
     <ClInclude Include="StaffManager.h" />
     <ClInclude Include="Stock.h" />
     <ClInclude Include="Table.h" />

@@ -12,6 +12,9 @@ public:
 	~Menu(){delete []dishes;}
 	Menu(const Menu& other) = delete;
 
+	// Operators
+	const Menu& operator+=(const Dish& dish){this->addDish(dish);}
+
 	// Methods
 	void addDish(const Dish& dish);
 	void removeDish(const char* dishName);
