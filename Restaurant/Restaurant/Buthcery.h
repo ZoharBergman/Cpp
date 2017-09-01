@@ -6,7 +6,10 @@
 class Buthcery : public Employee
 {
 
-public:	
+public:
+	Buthcery(const Employee& employee);
+	virtual ~Buthcery();
+
 	// Methods
 	void makeDish(const Dish& dish) const;
 };

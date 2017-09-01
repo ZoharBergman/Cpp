@@ -18,10 +18,11 @@ private:
 	char* description;
 	char* name;
 	sIngredientAndQuantity* ingredientsAndQuantities;
+	int sizeIngredientsAndQuantities;
 	eDishType type;
 
 public:
-	Dish(int price, const char* description, const char* name, const sIngredientAndQuantity* ingredientsAndQuantities, eDishType type);
+	Dish(int price, const char* description, const char* name, const sIngredientAndQuantity* ingredientsAndQuantities, int sizeIngredientsAndQuantities,eDishType type);
 	Dish(const Dish& other){ *this = other; }
 	~Dish() {delete []description; delete []name; delete []ingredientsAndQuantities;}
 
@@ -30,6 +31,7 @@ public:
 	const char* getDescription() const {return description;}
 	const char* getName() const {return name;}
 	const sIngredientAndQuantity* getIngredientsAndQuantities() const {return ingredientsAndQuantities;}
+	int getSizeIngredientsAndQuantities() const { return sizeIngredientsAndQuantities; }
 
 	// Setters
 	void setPrice(int price) {this->price = price; }
@@ -37,9 +39,9 @@ public:
 
 	// Operators
 	const Dish& operator=(const Dish& other);
-	friend int operator+(const Dish& dish, int price);
-	friend int operator+(int price, const Dish& dish);
 	bool operator<(const Dish& other){ return this->calcCalories() < other.calcCalories();}
+	friend int operator+(const Dish& dish, int price);
+	friend int operator+(int price, const Dish& dish);	
 
 	// Methods
 	double calcCalories() const;

@@ -18,16 +18,18 @@ public:
 private:
 	long id;
 	Dish** dishes;
+	int sizeDishes;
 	const Table* table;
 	eOrderStatus status;
 
 public:
-	Order(const Dish** dishes, const Table& table, eOrderStatus status);
+	Order(const Dish** dishes, int sizeDishes, const Table& table, eOrderStatus status);
 	Order(const Order& other){ *this = other; }
 	~Order() {delete []dishes; }
 
 	// Getters
 	const Dish** getDishes() const { return dishes; }
+	int getSizeDishes() const { return sizeDishes; }
 	const Table* getTable() const { return table; }
 	eOrderStatus getStatus() const { return status; }
 	

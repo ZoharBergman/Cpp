@@ -13,12 +13,12 @@ protected:
 	int seniority;
 	long bankAccountID;
 	int salary;
-	long employeeID;
-
-public:
+	long employeeID;	
 	Employee(const char* name, int seniority, long bankAccountID, int salary);
-	~Employee(){delete []name;}
+public:	
+	
 	Employee(const Employee& other) = delete;
+	virtual ~Employee(){delete []name;}	
 
 	// Getters
 	const char* getName() const { return name; }
@@ -35,7 +35,6 @@ public:
 
 	// Methods
 	void quit() const;
-	void print() const;
 };
 long Employee::idCounter = 0;
 

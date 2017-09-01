@@ -15,6 +15,11 @@ public:
 	Table(int maxNumOfGuests = 0, bool isTaken = false);
 	Table(const Table& other){ *this = other; }
 
+	// Getters
+	long getId() const { return id; }
+	int getMaxNumOfGuests() const { return maxNumOfGuests; }
+	bool getIsTaken() const { return isTaken; }
+
 	// Setters
 	void setIsTaken(bool isTaken) {this->isTaken = isTaken;}
 

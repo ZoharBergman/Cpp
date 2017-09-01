@@ -7,6 +7,7 @@ private:
 	char* name;
 	int price;
 	double caloricValue; 
+
 public:
 	Ingredient(const char* name, int price, double caloricValue);
 	Ingredient(const Ingredient& other) { *this = other; }
@@ -22,6 +23,9 @@ public:
 
 	// Operators
 	const Ingredient& operator=(const Ingredient& other);
+
+	// Methods
+	void print() const;
 };
 
 #endif // __INGREDIENT_H

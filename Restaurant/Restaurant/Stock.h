@@ -6,16 +6,20 @@
 
 class Stock
 {
-public:
+private:
 	sIngredientAndQuantity* ingredientsAndQuantities;
+	int sizeIngredientsAndQuantities;
 	
 public:
-	Stock(const sIngredientAndQuantity* ingredientsAndQuantities);
+	Stock(const sIngredientAndQuantity* ingredientsAndQuantities, int sizeIngredientsAndQuantities);
+	Stock(const Stock& other) = delete;
 	~Stock(){delete []ingredientsAndQuantities;}
 
 	//Getters
 	const sIngredientAndQuantity* getAllIngredientsAndtQuantities() const { return ingredientsAndQuantities; }
-	const sIngredientAndQuantity getIngredientAndQuantityByIngredientName(const char* ingredientName) const;
+	const sIngredientAndQuantity& getIngredientAndQuantityByIngredientName(const char* ingredientName) const;
+	sIngredientAndQuantity& getIngredientAndQuantityByIngredientName(const char* ingredientName);
+	int getSizeIngredientsAndQuantities() const { return sizeIngredientsAndQuantities; }
 
 	// Operators
 	const Stock& operator++();
