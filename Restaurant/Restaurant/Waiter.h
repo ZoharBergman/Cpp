@@ -11,6 +11,7 @@ public:
 
 private:
 	Order orders[MAX_NUM_ORDERS];
+	Waiter(const Waiter& other);
 
 public:
 	Waiter(const Employee& Employee);

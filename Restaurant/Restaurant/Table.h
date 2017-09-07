@@ -22,6 +22,7 @@ public:
 
 	// Setters
 	void setIsTaken(bool isTaken) {this->isTaken = isTaken;}
+	void setMaxNumOfGuests(int maxNumOfGuests){ this->maxNumOfGuests = maxNumOfGuests; }
 
 	// Operators
 	const Table& operator=(const Table& other);

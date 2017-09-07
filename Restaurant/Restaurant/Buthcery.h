@@ -2,10 +2,10 @@
 #define __BUTHCERY_H
 
 #include "Employee.h"
+class Dish;
 
 class Buthcery : public Employee
 {
-
 public:
 	Buthcery(const Employee& employee);
 	virtual ~Buthcery();

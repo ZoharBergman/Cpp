@@ -1,9 +1,36 @@
-﻿Build started 31/08/2017 18:52:34.
+﻿Build started 07/09/2017 19:36:11.
      1>Project "C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Restaurant\Restaurant.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         Restaurant.vcxproj -> C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Debug\Restaurant.exe
-     1>Done Building Project "C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Restaurant\Restaurant.vcxproj" (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Debug\Restaurant.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Debug\Restaurant.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Debug\Restaurant.lib" /MACHINE:X86 Debug\Main.obj
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Employee::Employee(char const *,int,long,int)" (??0Employee@@QAE@PBDHJH@Z) referenced in function "public: void __thiscall Employee::`default constructor closure'(void)" (??_FEmployee@@QAEXXZ)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall Employee::~Employee(void)" (??1Employee@@UAE@XZ) referenced in function "public: virtual __thiscall Waiter::~Waiter(void)" (??1Waiter@@UAE@XZ)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Buthcery::Buthcery(class Employee const &)" (??0Buthcery@@QAE@ABVEmployee@@@Z) referenced in function "int __cdecl initEmployees(class Employee * &)" (?initEmployees@@YAHAAPAVEmployee@@@Z)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall Buthcery::~Buthcery(void)" (??1Buthcery@@UAE@XZ) referenced in function "public: virtual __thiscall Chef::~Chef(void)" (??1Chef@@UAE@XZ)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall StaffManager::StaffManager(class Employee const *,int)" (??0StaffManager@@QAE@PBVEmployee@@H@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: class Employee & __thiscall StaffManager::getEmployeeByEmployeeId(long)" (?getEmployeeByEmployeeId@StaffManager@@QAEAAVEmployee@@J@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Ingredient::Ingredient(char const *,int,double)" (??0Ingredient@@QAE@PBDHN@Z) referenced in function "public: void __thiscall Ingredient::`default constructor closure'(void)" (??_FIngredient@@QAEXXZ)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: class Ingredient const & __thiscall Ingredient::operator=(class Ingredient const &)" (??4Ingredient@@QAEABV0@ABV0@@Z) referenced in function "int __cdecl initIngredients(class Ingredient * &)" (?initIngredients@@YAHAAPAVIngredient@@@Z)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Chef::Chef(class Buthcery const &,class StaffManager const &)" (??0Chef@@QAE@ABVButhcery@@ABVStaffManager@@@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: class Dish const & __thiscall Chef::inventNewDish(void)const " (?inventNewDish@Chef@@QBEABVDish@@XZ) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Menu::Menu(class Dish const *,int)" (??0Menu@@QAE@PBVDish@@H@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Menu::print(void)const " (?print@Menu@@QBEXXZ) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Stock::Stock(struct sIngredientAndQuantity const *,int)" (??0Stock@@QAE@PBUsIngredientAndQuantity@@H@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Stock::addIngredient(class Ingredient * &)" (?addIngredient@Stock@@QAEXAAPAVIngredient@@@Z) referenced in function "void __cdecl initStock(class Stock &,class Ingredient * &,int)" (?initStock@@YAXAAVStock@@AAPAVIngredient@@H@Z)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Stock::print(void)const " (?print@Stock@@QBEXXZ) referenced in function "public: void __thiscall Restaurant::stocktaking(void)const " (?stocktaking@Restaurant@@QBEXXZ)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: class Order const & __thiscall Order::operator=(class Order const &)" (??4Order@@QAEABV0@ABV0@@Z) referenced in function "public: __thiscall Order::Order(class Order const &)" (??0Order@@QAE@ABV0@@Z)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Waiter::Waiter(class Employee const &)" (??0Waiter@@QAE@ABVEmployee@@@Z) referenced in function "int __cdecl initEmployees(class Employee * &)" (?initEmployees@@YAHAAPAVEmployee@@@Z)
+     1>Main.obj : error LNK2019: unresolved external symbol "public: __thiscall Restaurant::Restaurant(char const *,class Chef const &,class Menu const &,class Stock const &,class Ingredient const *,int)" (??0Restaurant@@QAE@PBDABVChef@@ABVMenu@@ABVStock@@PBVIngredient@@H@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: class Order const & __thiscall Restaurant::sitCustomers(int)" (?sitCustomers@Restaurant@@QAEABVOrder@@H@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Restaurant::takeOrder(class Order const &,class Waiter const &)" (?takeOrder@Restaurant@@QAEXABVOrder@@ABVWaiter@@@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Restaurant::addDishToMenu(class Dish const &)" (?addDishToMenu@Restaurant@@QAEXABVDish@@@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Restaurant::prepareOrder(class Order const &,class Buthcery const &)const " (?prepareOrder@Restaurant@@QBEXABVOrder@@ABVButhcery@@@Z) referenced in function _main
+     1>Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Restaurant::printOrderToTable(class Table const &,class Waiter const &)const " (?printOrderToTable@Restaurant@@QBEXABVTable@@ABVWaiter@@@Z) referenced in function _main
+     1>C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Debug\Restaurant.exe : fatal error LNK1120: 23 unresolved externals
+     1>Done Building Project "C:\Users\Zuzu\Desktop\זהר\אפקה\שנה ג\סמסטר קיץ\C++\פרוייקט\RestaurantImpl\Restaurant\Restaurant\Restaurant.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.11
+Time Elapsed 00:00:02.90

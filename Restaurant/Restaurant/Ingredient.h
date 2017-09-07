@@ -3,15 +3,16 @@
 
 class Ingredient
 {
+public:
+	const static int MAX_NAME_SIZE = 20;
 private:
-	char* name;
+	char name[MAX_NAME_SIZE];
 	int price;
 	double caloricValue; 
 
 public:
-	Ingredient(const char* name, int price, double caloricValue);
+	Ingredient(const char* name = "", int price = 0, double caloricValue = 0);
 	Ingredient(const Ingredient& other) { *this = other; }
-	~Ingredient() {delete []name;}
 
 	// Getters
 	const char* getName() const {return name;}

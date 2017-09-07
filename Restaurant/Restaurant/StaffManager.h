@@ -8,10 +8,10 @@ class StaffManager
 private:
 	Employee* employees;
 	int sizeEmployees;
+	StaffManager(const StaffManager& other);
 
 public:	
-	StaffManager(const Employee* employees, int sizeEmployees);
-	StaffManager(const StaffManager& other) = delete;
+	StaffManager(const Employee* employees, int sizeEmployees);	
 	virtual ~StaffManager() { delete []employees; }
 
 	// Getters

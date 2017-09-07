@@ -17,34 +17,34 @@ public:
 
 private:
 	long id;
-	Dish** dishes;
+	const Dish** dishes;
 	int sizeDishes;
 	const Table* table;
 	eOrderStatus status;
 
 public:
-	Order(const Dish** dishes, int sizeDishes, const Table& table, eOrderStatus status);
+	Order(const Dish** dishes = nullptr, int sizeDishes = 0, const Table* table = nullptr, eOrderStatus status = BEING_TAKEN);
 	Order(const Order& other){ *this = other; }
 	~Order() {delete []dishes; }
 
 	// Getters
 	const Dish** getDishes() const { return dishes; }
 	int getSizeDishes() const { return sizeDishes; }
-	const Table* getTable() const { return table; }
+	const Table& getTable() const { return *table; }
 	eOrderStatus getStatus() const { return status; }
 	
 	// Setters
-	void setTable(const Table* table) {this->table = table; }
+	void setTable(const Table*& table) {this->table = table; }
 	void setStatus(eOrderStatus status) { this->status = status; }
 
 	// Operators
 	const Order& operator=(const Order& other);
-	const Order& operator+=(const Dish* dish){this->addDish(dish);}
+	const Order& operator+=(const Dish*& dish){this->addDish(dish);}
 
 	// Methods
 	int calcPrice() const;
 	void cancelDish(const char* dishName);
-	void addDish(const Dish* dish);
+	void addDish(const Dish*& dish);
 	void print() const;
 
 };

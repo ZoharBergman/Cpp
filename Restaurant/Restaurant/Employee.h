@@ -7,18 +7,21 @@ class Employee
 {
 public:
 	static long idCounter;
+	const static int MAX_NAME_SIZE = 20;
 
 protected:
-	char* name;
+	char name[MAX_NAME_SIZE];
 	int seniority;
 	long bankAccountID;
 	int salary;
 	long employeeID;	
-	Employee(const char* name, int seniority, long bankAccountID, int salary);
-public:	
 	
-	Employee(const Employee& other) = delete;
-	virtual ~Employee(){delete []name;}	
+private:
+	Employee(const Employee& other);
+
+public:	
+	Employee(const char* name = "New employee", int seniority = 0, long bankAccountID = 0, int salary = 500);	
+	virtual ~Employee();	
 
 	// Getters
 	const char* getName() const { return name; }
@@ -28,7 +31,7 @@ public:
 	long getEmployeeID() const { return employeeID; }
 
 	// Setters
-	void setName(const char* name) { this->name = strdup(name); }
+	void setName(const char* name);
 	void setSeniority(int seniority) { this->seniority = seniority; }
 	void setBankAccountID(int bankAccountID) { this->bankAccountID = bankAccountID; }
 	void setSalary(int salary) { this->salary = salary; }

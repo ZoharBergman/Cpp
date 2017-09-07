@@ -6,17 +6,18 @@
 class Menu
 {
 private:
-	const Dish* dishes;
+	Dish* dishes;
 	int sizeDishes;
+	Menu(const Menu& other);
+
 public:
 	Menu(const Dish* dishes, int sizeDishes);
-	~Menu(){delete []dishes;}
-	Menu(const Menu& other) = delete;
+	~Menu(){delete []dishes;}	
 
 	// Getters
 	const Dish* getAllDishes() const { return dishes; }
 	int getSizeDishes() const {return sizeDishes; }
-	const Dish& getDishByName(const char* name);
+	const Dish*& getDishByName(const char* name);
 
 	// Operators
 	const Menu& operator+=(const Dish& dish){this->addDish(dish);}

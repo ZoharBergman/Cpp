@@ -5,7 +5,7 @@
 #include "StaffManager.h"
 #include "Dish.h"
 
-class Chef : public Buthcery, StaffManager
+class Chef : public Buthcery, public StaffManager
 {
 
 public:

@@ -13,18 +13,21 @@ public:
 		DESSERT
 	};
 
+	const static int MAX_DESCRIPTION_SIZE = 100;
+	const static int MAX_NAME_SIZE = 30;
+
 private:
 	int price;
-	char* description;
-	char* name;
+	char description[MAX_DESCRIPTION_SIZE];
+	char name[MAX_NAME_SIZE];
 	sIngredientAndQuantity* ingredientsAndQuantities;
 	int sizeIngredientsAndQuantities;
 	eDishType type;
 
 public:
-	Dish(int price, const char* description, const char* name, const sIngredientAndQuantity* ingredientsAndQuantities, int sizeIngredientsAndQuantities,eDishType type);
+	Dish(int price = 0, const char* description = "", const char* name = "", const sIngredientAndQuantity* ingredientsAndQuantities = nullptr, int sizeIngredientsAndQuantities = 0, eDishType type = MAIN_COURSE);
 	Dish(const Dish& other){ *this = other; }
-	~Dish() {delete []description; delete []name; delete []ingredientsAndQuantities;}
+	~Dish() {delete []ingredientsAndQuantities;}
 
 	// Getters
 	int getPrice() const {return price;}
@@ -35,7 +38,7 @@ public:
 
 	// Setters
 	void setPrice(int price) {this->price = price; }
-	void setDescription (const char* description) {this->description = strdup(description);}
+	void setDescription (const char* description);
 
 	// Operators
 	const Dish& operator=(const Dish& other);
