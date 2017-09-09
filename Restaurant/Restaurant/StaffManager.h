@@ -7,16 +7,17 @@ class StaffManager
 {
 private:
 	Employee* employees;
-	int sizeEmployees;
+	int logicalSizeEmployees;
+	int physicalSizeEmployees;
 	StaffManager(const StaffManager& other);
 
 public:	
-	StaffManager(const Employee* employees, int sizeEmployees);	
+	StaffManager(const Employee* employees = NULL, int sizeEmployees = 0);	
 	virtual ~StaffManager() { delete []employees; }
 
 	// Getters
 	const Employee* getAllEmployees() const { return employees; }
-	int getSizeEmployees() const { return sizeEmployees; }
+	int getSizeEmployees() const { return logicalSizeEmployees; }
 	const Employee& getEmployeeByEmployeeId(long employeeId) const;
 	Employee& getEmployeeByEmployeeId(long employeeId);
 

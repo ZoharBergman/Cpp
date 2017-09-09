@@ -7,16 +7,17 @@ class Menu
 {
 private:
 	Dish* dishes;
-	int sizeDishes;
+	int logicalSizeDishes;
+	int physicalSizeDishes;
 	Menu(const Menu& other);
 
 public:
-	Menu(const Dish* dishes, int sizeDishes);
+	Menu(const Dish* dishes = NULL, int sizeDishes = 0);
 	~Menu(){delete []dishes;}	
 
 	// Getters
 	const Dish* getAllDishes() const { return dishes; }
-	int getSizeDishes() const {return sizeDishes; }
+	int getSizeDishes() const {return logicalSizeDishes; }
 	const Dish*& getDishByName(const char* name);
 
 	// Operators

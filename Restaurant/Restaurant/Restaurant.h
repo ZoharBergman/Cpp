@@ -23,7 +23,8 @@ private:
 	Stock stock;
 	Table tables[MAX_NUM_TABLES];
 	Ingredient* ingredients;
-	int sizeIngredients;
+	int logicalSizeIngredients;
+	int physicaclSizeIngredients;
 	Restaurant(const Restaurant& other);
 
 public:
@@ -48,18 +49,19 @@ public:
 	const Ingredient* getAllIngredients() const {return ingredients;}
 	Ingredient* getAllIngredients() {return ingredients;}
 	
-	int getSizeIngredients() const { return sizeIngredients; }
+	int getSizeIngredients() const { return logicalSizeIngredients; }
 
 	// Setters
 	void setTheChef(const Chef& chef){this->theChef = chef;}
 
 	// Methods
-	const Order& sitCustomers(int size);
+	const Order& seatCustomers(int size);
+	void showMenu(){ menu.print(); }
 	void takeOrder(const Order& order, const Waiter& waiter);
 	void addDishToMenu(const Dish& dish);
 	void prepareOrder(const Order& order, const Buthcery& butchery) const;
 	void stocktaking() const {stock.print();}
-	void fillStock(const sIngredientAndQuantity* ingredientsAndQuantities);
+	void fillStock(const sIngredientAndQuantity* ingredientsAndQuantities, int sizeIngredientsAndQuantities);
 	void printOrderToTable(const Table& table, const Waiter& waiter) const;
 };
 

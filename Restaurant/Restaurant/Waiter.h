@@ -22,9 +22,8 @@ public:
 	Order& getOrderByOrderId(long orderId);
 
 	// Methods
-	void takeOrder(const Order &order);
-	int serveBill(const Order &order);
-	void cleanTable(const Table &table) const;
+	void takeOrder(const Order& order);
+	int serveBill(const Order& order);
 };
 
 #endif // __WAITER_H

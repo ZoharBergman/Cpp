@@ -20,7 +20,7 @@ private:
 	Employee(const Employee& other);
 
 public:	
-	Employee(const char* name = "New employee", int seniority = 0, long bankAccountID = 0, int salary = 500);	
+	Employee(const char* name = "", int seniority = 0, long bankAccountID = 0, int salary = 500);	
 	virtual ~Employee();	
 
 	// Getters
