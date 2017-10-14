@@ -23,10 +23,12 @@ private:
 	const Table* table;
 	eOrderStatus status;
 
+	Order(const Order& other);
+	const Order& operator=(const Order& other);
+
 public:
-	Order(const Dish** dishes = NULL, int sizeDishes = 0, const Table* table = NULL, eOrderStatus status = BEING_TAKEN);
-	Order(const Order& other){ *this = other; }
-	~Order() {delete []dishes; }
+	Order(const Table* table);
+	~Order();
 
 	// Getters
 	const Dish** getDishes() const { return dishes; }
@@ -39,13 +41,12 @@ public:
 	void setStatus(eOrderStatus status) { this->status = status; }
 
 	// Operators
-	const Order& operator=(const Order& other);
-	const Order& operator+=(const Dish*& dish){this->addDish(dish); return *this; }
+	const Order& operator+=(const Dish* dish){this->addDish(dish); return *this; }
 
 	// Methods
 	int calcPrice() const;
 	void cancelDish(const char* dishName);
-	void addDish(const Dish*& dish);
+	void addDish(const Dish* dish);
 	void print() const;
 
 };

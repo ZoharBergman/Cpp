@@ -10,10 +10,12 @@ private:
 	sIngredientAndQuantity* ingredientsAndQuantities;
 	int logicalSizeIngredientsAndQuantities;
 	int physicalSizeIngredientsAndQuantities;
+
 	Stock(const Stock& other);
+	const Stock& operator=(const Stock& other);
 
 public:
-	Stock(const sIngredientAndQuantity* ingredientsAndQuantities = NULL, int sizeIngredientsAndQuantities = 0);	
+	Stock();	
 	~Stock(){delete []ingredientsAndQuantities;}
 
 	//Getters

@@ -26,8 +26,8 @@ private:
 	eDishType type;
 
 public:
-	Dish(int price = 0, const char* description = "", const char* name = "", const sIngredientAndQuantity* ingredientsAndQuantities = NULL, int sizeIngredientsAndQuantities = 0, eDishType type = MAIN_COURSE);
-	Dish(const Dish& other){ *this = other; }
+	Dish(int price, const char* description, const char* name, eDishType type);
+	Dish(const Dish& other) { *this = other; }
 	~Dish() {delete []ingredientsAndQuantities;}
 
 	// Getters

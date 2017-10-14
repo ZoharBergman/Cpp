@@ -11,7 +11,7 @@ private:
 	double caloricValue; 
 
 public:
-	Ingredient(const char* name = "", int price = 0, double caloricValue = 0);
+	Ingredient(const char* name, int price, double caloricValue);
 	Ingredient(const Ingredient& other) { *this = other; }
 
 	// Getters

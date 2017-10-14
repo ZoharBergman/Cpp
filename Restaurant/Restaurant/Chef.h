@@ -7,9 +7,12 @@
 
 class Chef : public Buthcery, public StaffManager
 {
+private:
+	Chef(const Chef& other);
+	const Chef& operator=(const Chef& other);
 
 public:
-	Chef(const Buthcery& buthcery, const StaffManager& staffManager);
+	Chef(const char* name, int seniority, long bankAccountID, int salary);
 
 	// Methods
 	bool approveDish(const Dish& dish) const;

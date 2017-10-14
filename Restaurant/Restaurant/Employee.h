@@ -18,9 +18,10 @@ protected:
 	
 private:
 	Employee(const Employee& other);
+	const Employee& operator=(const Employee& other);
 
 public:	
-	Employee(const char* name = "", int seniority = 0, long bankAccountID = 0, int salary = 500);	
+	Employee(const char* name, int seniority, long bankAccountID, int salary);	
 	virtual ~Employee();	
 
 	// Getters

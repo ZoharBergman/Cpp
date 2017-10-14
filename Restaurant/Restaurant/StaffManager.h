@@ -6,24 +6,26 @@
 class StaffManager
 {
 private:
-	Employee* employees;
+	Employee** employees;
 	int logicalSizeEmployees;
 	int physicalSizeEmployees;
+
 	StaffManager(const StaffManager& other);
+	const StaffManager& operator=(const StaffManager& other);
 
 public:	
-	StaffManager(const Employee* employees = NULL, int sizeEmployees = 0);	
-	virtual ~StaffManager() { delete []employees; }
+	StaffManager();	
+	virtual ~StaffManager();
 
 	// Getters
-	const Employee* getAllEmployees() const { return employees; }
+	const Employee*const* getAllEmployees() const { return employees; }
 	int getSizeEmployees() const { return logicalSizeEmployees; }
 	const Employee& getEmployeeByEmployeeId(long employeeId) const;
 	Employee& getEmployeeByEmployeeId(long employeeId);
 
 	// Methods
-	void employ(const Employee& employee);
-	void fire(const Employee& employee);
+	void employ(const Employee* employee);
+	void fire(const Employee* employee);
 	void ShoutOnEmployees() const;
 };
 

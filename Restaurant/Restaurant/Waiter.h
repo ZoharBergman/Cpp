@@ -11,10 +11,12 @@ public:
 
 private:
 	Order orders[MAX_NUM_ORDERS];
+
 	Waiter(const Waiter& other);
+	const Waiter& operator=(const Waiter& other);
 
 public:
-	Waiter(const Employee& Employee);
+	Waiter(const char* name, int seniority, long bankAccountID, int salary);
 
 	// Getters
 	const Order* getAllOrders() const { return orders; }

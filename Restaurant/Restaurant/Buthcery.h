@@ -6,8 +6,12 @@ class Dish;
 
 class Buthcery : public Employee
 {
+private:
+	Buthcery(const Buthcery& other);
+	const Buthcery& operator=(const Buthcery& other);
+
 public:
-	Buthcery(const Employee& employee);
+	Buthcery(const char* name, int seniority, long bankAccountID, int salary);
 	virtual ~Buthcery();
 
 	// Methods

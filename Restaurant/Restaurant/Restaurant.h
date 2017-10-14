@@ -22,14 +22,16 @@ private:
 	Menu menu;
 	Stock stock;
 	Table tables[MAX_NUM_TABLES];
-	Ingredient* ingredients;
+	Ingredient** ingredients;
 	int logicalSizeIngredients;
 	int physicaclSizeIngredients;
+
 	Restaurant(const Restaurant& other);
+	const Restaurant& operator=(const Restaurant& other);
 
 public:
-	Restaurant(const char* name, const Chef& chef, const Menu& menu, const Stock& stock, const Ingredient* ingredients, int sizeIngredients);
-	~Restaurant(){delete []ingredients;}
+	Restaurant(const char* name, const Chef& chef, const Menu& menu, const Stock& stock);
+	~Restaurant();
 
 	// Getters
 	const char* getName() const {return name;}
@@ -46,19 +48,19 @@ public:
 	const Table* getTables() const {return tables;}
 	Table* getTables() {return tables;}
 	
-	const Ingredient* getAllIngredients() const {return ingredients;}
-	Ingredient* getAllIngredients() {return ingredients;}
+	const Ingredient*const* getAllIngredients() const {return ingredients;}
+	Ingredient** getAllIngredients() {return ingredients;}
 	
 	int getSizeIngredients() const { return logicalSizeIngredients; }
 
 	// Setters
-	void setTheChef(const Chef& chef){this->theChef = chef;}
+	void setTheChef(const Chef& chef);
 
 	// Methods
-	const Order& seatCustomers(int size);
+	Order& seatCustomers(int size);
 	void showMenu(){ menu.print(); }
 	void takeOrder(const Order& order, const Waiter& waiter);
-	void addDishToMenu(const Dish& dish);
+	void addDishToMenu(const Dish* dish);
 	void prepareOrder(const Order& order, const Buthcery& butchery) const;
 	void stocktaking() const {stock.print();}
 	void fillStock(const sIngredientAndQuantity* ingredientsAndQuantities, int sizeIngredientsAndQuantities);

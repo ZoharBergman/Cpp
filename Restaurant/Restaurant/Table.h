@@ -11,9 +11,11 @@ private:
 	int maxNumOfGuests;
 	bool isTaken;	
 
+	Table(const Table& other);
+	const Table& operator=(const Table& other);
+
 public:
-	Table(int maxNumOfGuests = 0, bool isTaken = false);
-	Table(const Table& other){ *this = other; }
+	Table(int maxNumOfGuests, bool isTaken);	
 
 	// Getters
 	long getId() const { return id; }
@@ -23,9 +25,6 @@ public:
 	// Setters
 	void setIsTaken(bool isTaken) {this->isTaken = isTaken;}
 	void setMaxNumOfGuests(int maxNumOfGuests){ this->maxNumOfGuests = maxNumOfGuests; }
-
-	// Operators
-	const Table& operator=(const Table& other);
 };
 long Table::idCounter = 0;
 
